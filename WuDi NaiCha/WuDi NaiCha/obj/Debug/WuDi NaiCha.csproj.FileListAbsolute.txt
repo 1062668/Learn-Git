@@ -1,0 +1,45 @@
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\csc.exe
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.CodeAnalysis.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.CSharp.Core.targets
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\Microsoft.VisualBasic.Core.targets
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\System.Collections.Immutable.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\System.Reflection.Metadata.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\vbc.exe
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\VBCSCompiler.exe
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\roslyn\VBCSCompiler.exe.config
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\WuDi NaiCha.dll.config
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\WuDi NaiCha.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\WuDi NaiCha.pdb
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.Agent.Intercept.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.DependencyCollector.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.PerfCounterCollector.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.ServerTelemetryChannel.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.Web.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.WindowsServer.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.ApplicationInsights.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.Web.Infrastructure.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Helpers.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Mvc.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Razor.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.Deployment.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.Razor.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.DependencyCollector.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.ServerTelemetryChannel.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.Web.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.AI.WindowsServer.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.ApplicationInsights.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Razor.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.Deployment.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Webpages.Razor.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Helpers.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\bin\System.Web.Mvc.xml
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\obj\Debug\WuDi NaiCha.dll
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\obj\Debug\WuDi NaiCha.pdb
+X:\programming files\C#\WuDi NaiCha\WuDi NaiCha\obj\Debug\WuDi NaiCha.csprojResolveAssemblyReference.cache

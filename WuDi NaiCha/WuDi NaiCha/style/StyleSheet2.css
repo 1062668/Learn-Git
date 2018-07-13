@@ -1,0 +1,7 @@
+﻿body {
+}
+        .custom-validation-summary ul {
+	    list-style-type:none;
+        color: red;
+        padding: 0;
+        }

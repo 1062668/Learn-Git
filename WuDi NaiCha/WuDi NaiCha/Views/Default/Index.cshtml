@@ -1,0 +1,387 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model WuDi_NaiCha.Models.MainPageModel
+
+
+
+<head>
+    <link rel="stylesheet" href="~/style/StyleSheet1.css">
+
+    <title>change picture</title>
+
+    <script type="text/javascript">
+        function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = 0;
+          images[0] = "http://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/bubble-tea-mr.jpg?itok=AptUfc9x";
+          images[1] = "https://aonefirstclass.files.wordpress.com/2011/05/dsc_2148.jpg";
+          images[2] = "https://c1.staticflickr.com/9/8065/8259396739_110be810d2_b.jpg";
+          images[3] = "https://i1.wp.com/www.thenomadbites.com/wp-content/uploads/2015/07/2015-07-01-09-15-40-1.jpg?resize=665%2C368";
+    </script>
+
+    <title>Click Menu</title>
+
+    <script>
+            function myFunction() {
+                if (document.getElementById("menuSelection").style.display == "block") {
+                    document.getElementById("menuSelection").style.display = "none";
+                    document.getElementById("FollowingSection").style.display = "block";
+
+                }
+                else {
+                    document.getElementById("menuSelection").style.display = "block";
+                    document.getElementById("FollowingSection").style.display = "none";
+                }
+            }
+
+    </script>
+</head>
+
+<h1 align="left">Wu Di Nai Cha</h1>
+@*<h2>@Html.Raw(ViewBag.HtmlStr)</h2>
+<h3>@DateTime.Now</h3>*@
+
+<div class="container">
+    <div>
+        <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" align="left" alt="LionP" width="150" height="80" style="margin-top:0">
+    </div>
+    <ul  style="float:right">
+        <li id="accountinfo" style="list-style-type:none;margin-left:0;margin-top:0px;display:inline-block">
+            <ul class="accountinfo" style="list-style-type:none;margin-left:0;margin-top:0px;display:block">
+                <li style="list-style-type:none;margin-top:0px;display:block">@Html.Raw(ViewBag.Email)</li>
+                <li style="list-style-type:none;margin-top:0px;display:block"><a >@Html.Raw(ViewBag.account)</a>&nbsp&nbsp<a onclick="document.getElementById('accountinfo').style.display = 'none'">@Html.Raw(ViewBag.logout)</a></li>
+            </ul>
+        </li>
+        <li style="list-style-type:none;margin-left:10px;margin-top:0;display:inline-block">
+            <ul class="navList" style="list-style-type:none;margin-left:0;margin-top:0">
+                <li style="display:inline-block;background-color:yellow;border:2px solid black">
+                    <a href="#contact" class="iconBar_1" onclick="document.getElementById('id01').style.display='block'" style="display:flex;align-items:center;justify-content:center;color:black;padding-top:20px;padding-bottom:20px;width:70px">
+                        Log In
+                    </a>
+                </li><!--
+                
+                --><li style="display:inline-block;margin-left:-2px;background-color:yellow;border:2px solid black">
+                    <a href="http://en.coco-tea.com/store-locator" class="iconBar_2" target="_blank" style="display:flex;align-items:center;justify-content:center;color:black;padding-top:20px;padding-bottom:20px;width:70px">
+                        Address
+                    </a>
+                </li><!--
+                
+                --><li style="display:inline-block;margin-left:-2px;background-color:yellow;border:2px solid black">
+                    <a href="#earth" class="iconBar_3" style="display:flex;align-items:center;justify-content:center;color:black;padding-top:20px;padding-bottom:20px;width:70px">
+                        earth
+                    </a>
+                </li><!--
+                
+                --><li style="display:inline-block;margin-left:-2px;background-color:yellow;border:2px solid black">
+                    <a href="#menus" class="iconBar_4" aria-expanded="false" onclick="myFunction()" style="display:flex;align-items:center;justify-content:center;color:black;padding-top:20px;padding-bottom:20px;width:70px">
+                        Menu
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+        <br>
+
+
+        @if (ViewBag.loginindex == 0)
+        {
+            <div id="id01" class="modal" style="margin-left:600px;margin-top:50px;padding:100px;display:block;font-size:19px;width:1200px">
+                <form class="modal-content animate" method="post" action="@Url.Action("Logins", "Default")" style="padding:100px;background-color:lightblue;border-radius:25px">
+                    <div class="logo" style="display:block">
+                        <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" width="300" height="200" />
+                    </div>
+                    <div style="margin-top:50px">
+                        <p style="font-size:40px"><b>Log In Page</b></p>
+                        @if (ViewBag.loginindex == 0)
+                {
+                            <p id="savedsuccess2" style="color:red;font-size:large">FirstName and/or Password are/is Wrong</p>
+                        }
+                        <br>
+                        <label for="uname"><b>FirstName</b></label>
+                        <input id="FirstName" type="text" style="margin-left:27px" placeholder="Enter FirstName" name="FirstName" required>
+                        <br>
+                        <br>
+                        <label for="psw"><b>Password</b></label>
+                        <input id="UserPwd" type="password" style="margin-left:30px" placeholder="Enter Password" name="UserPwd" required>
+                        <br>
+                        <br>
+                        <input id="submit1" type="submit" value="Log In" />
+                        <label style="margin-left:70px">
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <br>
+                        <br>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw" style="margin-left:60px">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+        }
+
+
+
+        <div id="id01" class="modal" style="margin-left:600px;margin-top:50px;padding:100px;display:none;font-size:19px;width:1200px">
+            <form class="modal-content animate" method="post" action="@Url.Action("Logins", "Default")" style="padding:100px;background-color:lightblue;border-radius:25px">
+                <div class="logo" style="display:block">
+                    <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" width="300" height="200" />
+                </div>
+                <div style="margin-top:50px">
+                    <p style="font-size:40px"><b>Log In Page</b></p>
+                    @if (ViewBag.loginindex == 0)
+                    {
+                        <p id="savedsuccess2" style="color:red;font-size:large">FirstName and/or Password are/is Wrong</p>
+                    }
+                    <br>
+                    <label for="uname"><b>FirstName</b></label>
+                    <input id="FirstName" type="text" style="margin-left:27px" placeholder="Enter FirstName" name="FirstName" required>
+                    <br>
+                    <br>
+                    <label for="psw"><b>Password</b></label>
+                    <input id="UserPwd" type="password" style="margin-left:30px" placeholder="Enter Password" name="UserPwd" required>
+                    <br>
+                    <br>
+                    <input id="submit1" type="submit" value="Log In" />
+                    <label style="margin-left:70px">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <br>
+                    <br>
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw" style="margin-left:60px">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+
+    <br>
+    <br>
+    <br>
+
+        <hr style="height:5px;border:none;color:#333;background-color:#333;" />
+
+        <div id="menuSelection" style="display:none">
+            <div class="ABOUTUS">
+                <ul id="menus" class="AboutUs_ul" align="center" style="list-style-type:none;padding:0;">
+                    <li class="AboutUs_li" style="background-color:Highlight;border:2px solid black;height:100px;display:flex;align-items:center">
+                        <a href="#" class="list" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                            <font size="10" color="black">
+                                About Us
+                            </font>
+                            <i class="fa it">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="About_DropDown">
+                    <ul align="center" style="list-style-type:none;padding:0;">
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Our Brand</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/history"><font color="black">Our History</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-vision"><font color="black">Our Vision</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/news"><font color="black">News</font></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="Products" style="margin-top:-10px">
+                <ul class="Products_ul" align="center" style="list-style-type:none;padding:0;">
+                    <li class="Products_li" style="background-color:Highlight;border:2px solid black;max-height:100px;height:100px;display:flex;align-items:center">
+                        <a href="#" class="list" id="cocodrink" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                            <font size="10" color="black">
+                                Products
+                            </font>
+                        </a>
+                    </li>
+                </ul>
+                <div class="Products_DropDown">
+                    <ul align="center" style="list-style-type:none;padding:0;">
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Series Drink</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/history"><font color="black">Price</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-vision"><font color="black">Recommendation</font></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="Stores" style="margin-top:-10px">
+                <ul class="Stores_ul" style="list-style-type:none;padding:0;">
+                    <li class="store_li" style="background-color:Highlight;border:2px solid black;max-height:100px;height:100px;display:flex;align-items:center">
+                        <a href="#" class="list" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                            <font size="10" color="black">
+                                Stores
+                            </font>
+                        </a>
+                    </li>
+                </ul>
+                <div class="Stores_DropDown">
+                    <ul align="center" style="list-style-type:none;padding:0;">
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Store Locator</font></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="Franchise" style="margin-top:-10px">
+                <ul class="Franchise_ul" style="list-style-type:none;padding:0;">
+                    <li class="Franchise_li" style="background-color:Highlight;border:2px solid black;max-height:100px;height:100px;display:flex;align-items:center">
+                        <a href="http://en.coco-tea.com/franchise" class="list" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                            <font size="10" color="black">
+                                Franchise
+                            </font>
+                        </a>
+                    </li>
+                </ul>
+                <div class="Franchise_DropDown">
+                    <ul align="center" style="list-style-type:none;padding:0;">
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Coco Merits</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/history"><font color="black">Application</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-vision"><font color="black">FAQ</font></a></li>
+                        <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-vision"><font color="black">Share</font></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="FollowingSection">
+            <div id="SecondSection">
+                <img id="img" onload="startTimer()" style="width:100%;overflow:scroll;max-height:600px;height:600px" src="http://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/bubble-tea-mr.jpg?itok=AptUfc9x" />
+            </div>
+
+            <div id="ThirdSection">
+                <div class="COOP">
+                    <ul class="COOP_ul" align="center" style="list-style-type:none;padding:0;">
+                        <li class="COOP_li" style="background-color:Highlight;border:2px solid black;height:100px;display:flex;align-items:center">
+                            <a href="#" class="list" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                                <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" align="left" alt="LionP" width="30" height="30" style="margin-top:0">
+                                <font size="10" color="black">
+                                    <p style="margin-left:10px">COOP</p>
+                                </font>
+                                <i class="fa it">
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="COOP_DropDown">
+                        <ul align="center" style="list-style-type:none;padding:0;">
+                            <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Online Application</font></a></li>
+                            <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/history"><font color="black">Learn More</font></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="COCO_Drinks" style="margin-top:-10px">
+                    <ul class="COCO_Drinks_ul" align="center" style="list-style-type:none;padding:0;">
+                        <li class="COCO_Drinks_li" style="background-color:Highlight;border:2px solid black;max-height:100px;height:100px;display:flex;align-items:center">
+                            <a href="#" class="list" id="cocodrink" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                                <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" align="left" alt="LionP" width="30" height="30" style="margin-top:0">
+                                <font size="10" color="black">
+                                    <p style="margin-left:10px">COCO Drinks</p>
+                                </font>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="COCO_Drinks_DropDown">
+                        <ul align="center" style="list-style-type:none;padding:0;">
+                            <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Price</font></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Recruit" style="margin-top:-10px">
+                    <ul class="Recruit_ul" style="list-style-type:none;padding:0;">
+                        <li class="Recruit_li" style="background-color:Highlight;border:2px solid black;max-height:100px;height:100px;display:flex;align-items:center">
+                            <a href="http://en.coco-tea.com/franchise" class="list" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding-left:10px;display:flex;width:100%;height:100%;align-items:center">
+                                <img src="https://i.scdn.co/image/624b2e30862389c67394a013f768555622a87a90" align="left" alt="LionP" width="30" height="30" style="margin-top:0">
+                                <font size="10" color="black">
+                                    <p style="margin-left:10px">Recruit</p>
+                                </font>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="Recruit_DropDown">
+                        <ul align="center" style="list-style-type:none;padding:0;">
+                            <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/our-brand"><font color="black">Canada</font></a></li>
+                            <li class="submenu" style="background-color:lightblue;border:1px solid black;height:50px;align-items:center;justify-content:center"><a style="display:flex;width:100%;height:100%;align-items:center;justify-content:center" href="http://en.coco-tea.com/history"><font color="black">China</font></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ForthSection" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSre_r969eqy1jYzfB8p4WmY3RrYUz6rZ5jk08mWdCF5HKc5Utn')">
+                <br>
+                <div style="float:left;margin-left:150px;margin-top:30px;margin-bottom:30px;border:2px solid black;background-color:deepskyblue;padding:10px">
+                    <p><font color="black" size="4">Type your Personal Information<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp to win 5000 CAD</font></p>
+
+                    @using (Html.BeginForm("SaveRecord", "Default", FormMethod.Post))
+                    {
+                        <p id="savedsuccess" style="color:red;font-size:large">@Html.Raw(TempData["savesuccess"])</p>
+                        if (TempData["savesuccess"] != null)
+                        {
+                            <p id="savedsuccess2" style="color:red;font-size:large">Saved Successful</p>
+                        }
+                        <link rel="stylesheet" href="~/style/StyleSheet2.css">
+                        @Html.ValidationSummary(false, "", new { @class = "custom-validation-summary" })
+                        @Html.LabelFor(model => model.Infor.FirstName)
+                        @Html.TextBoxFor(model => model.Infor.FirstName, new { @class = "form-control", @placeholder = "FirstName" })
+                        @Html.LabelFor(model => model.Infor.LastName)
+                        @Html.TextBoxFor(model => model.Infor.LastName, new { @class = "form-control", @placeholder = "LastName" })
+                        @Html.LabelFor(model => model.Infor.Birthday)
+                        @Html.TextBoxFor(model => model.Infor.Birthday, new { @class = "form-control datePicker", @placeholder = "Birthday" })
+                        @Html.LabelFor(model => model.Infor.Email)
+                        @Html.TextBoxFor(model => model.Infor.Email, new { @class = "form-control", @placeholder = "Email" })
+                        @Html.LabelFor(model => model.Infor.PassWord)
+                        @Html.PasswordFor(model => model.Infor.PassWord, new { @class = "form-control", placeholder = "Password" })
+
+                        
+                        @Html.LabelFor(model => model.Infor.CellPhone)
+                        @Html.TextBoxFor(model => model.Infor.CellPhone, new { @class = "form-control", @placeholder = "CellPhone" })
+                        @Html.LabelFor(model => model.Infor.City)
+                        @Html.TextBoxFor(model => model.Infor.City, new { @class = "form-control", @placeholder = "City" })
+
+                        <input type="submit" value="Submit" style="margin-top:10px">
+                    }
+                    @using (Html.BeginForm("VIPCard", "Default", FormMethod.Post))
+                    {
+                        if (TempData["savesuccess"] != null)
+                        {
+                            <button id="VIPCard" style="margin-top:10px">Show VIPCard</button>
+                        }
+                    }
+
+                </div>
+                <div style="display:block;margin-left:300px;margin-top:30px;padding-bottom:30px">
+                    <p style="display:flex;align-items:center;justify-content:center;background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DTKJIrP_XSij3woLYAE_tyDKZe1C-pJdksw_oleIrw9BFEWS');background-repeat:no-repeat ;background-position:center;background-size:400px 200px">
+                        <font color="black" size="6">
+                            Recommandation Drinks
+                        </font>
+                    </p>
+                    <img src="https://i.pinimg.com/originals/71/7e/4a/717e4a62412eed87152d40fd49c4e86c.jpg" alt="EmptyCup" style="margin-top:20px;height:400px;display:block;width:300px;margin-left:auto;margin-right:auto">
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div>
+                </div>
+            </div>
+
+            @using (Html.BeginForm("ACT", "Default"))
+            {
+                <input type="text" name="reportName" />
+                <input type="submit" />
+            }
+            @Html.Raw(ViewBag.HtmlStr2)
+
+        </div>
+</div>
+
+

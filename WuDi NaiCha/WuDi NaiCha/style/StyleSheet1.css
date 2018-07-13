@@ -1,0 +1,66 @@
+﻿body {
+
+    
+}
+
+
+ li a:hover:not(.active) {
+            background-color:orange;
+        }
+         li a:hover:active{
+            background-color:cornflowerblue;
+        }
+
+        .ABOUTUS:hover .About_DropDown{display:block;}
+        
+        .About_DropDown {
+            display: none;
+            margin-top:-10px;
+        }
+        .Products:hover .Products_DropDown{display:block;}
+
+        .Products_DropDown {
+            display: none;
+            margin-top: -10px;
+        }
+        .Stores:hover .Stores_DropDown{display:block;}
+
+        .Stores_DropDown {
+            display: none;
+            margin-top: -10px;
+        }
+        .Franchise:hover .Franchise_DropDown{display:block;}
+
+        .Franchise_DropDown {
+            display: none;
+            margin-top: -10px;
+        }
+        .submenu a {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .COCO_Drinks:hover .COCO_Drinks_DropDown{display:block;}
+
+        .COCO_Drinks_DropDown{
+            display: none;
+            margin-top: -10px;
+        }
+
+        .Recruit:hover .Recruit_DropDown{display:block;}
+
+        .Recruit_DropDown {
+            display: none;
+            margin-top: -10px;
+        }
+
+        .COOP:hover .COOP_DropDown{display:block;}
+
+        .COOP_DropDown {
+            display: none;
+            margin-top: -10px;
+        }
+
+
+
+
